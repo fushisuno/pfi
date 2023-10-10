@@ -12,6 +12,4 @@ async function createTableUser(){
     `
 }
 
-
-
 createTableUser();

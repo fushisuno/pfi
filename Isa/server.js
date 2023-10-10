@@ -41,8 +41,6 @@ server.set('view engine', 'handlebars');
 server.set("views", path.join(__dirname, './src/views'));
 
 
-
-
 // Router
 server.use(app);
 
