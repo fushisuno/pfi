@@ -62,7 +62,6 @@ module.exports ={
       const token = randomUUID();
       await User.insertUser(data.inName, data.inEmail, data.inPassword, token);
       req.session.sessionUser = token;
-      console.log('Sessaõ: ', req.session.sessionUser)
       res.render('pages/index');
       return;
 
