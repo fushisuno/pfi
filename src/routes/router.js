@@ -11,11 +11,11 @@ const AdmController = require('../controllers/AdmController');
 const InfoController = require('../controllers/InfoController');
 
 router.get("/", (req, res) => {
-  res.render('pages/index');
+  res.render('pug/pages/index');
 });
 
 router.get("/home", (req, res) => {
-  res.render('pages/home');
+  res.render('pug/pages/home');
 }); 
 
 router.get("/informacoes", Auth.private, InfoController.findInfos);

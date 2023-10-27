@@ -17,7 +17,7 @@ module.exports ={
           msgList.push(value.msg)
         }
       });
-      res.render("pages/login",{erros: listError})
+      res.render("pug/pages/login",{erros: listError})
       return;
     }
 
@@ -25,14 +25,14 @@ module.exports ={
     const isUser = await User.findUserEmail(data.inEmail);
     if(isUser == undefined || !isUser){
       listError.push({"msg": 'E-mail inválido'})
-      res.render("pages/login",{erros: listError})
+      res.render("pug/pages/login",{erros: listError})
       return;
     }
 
     const match = (data.inPassword == isUser.senha)? true: false;
     if(!match){
       listError.push({"msg": 'Senha não corresponde'}) 
-      res.render("pages/login",{erros: listError})
+      res.render("pug/pages/login",{erros: listError})
       return;
     }
 
@@ -52,7 +52,7 @@ module.exports ={
           msgList.push(value.msg)
         }
       });
-      res.render("pages/cadastro",{erros: listError})
+      res.render("pug/pages/cadastro",{erros: listError})
       return;
     }
     const data = matchedData(req);
@@ -62,12 +62,12 @@ module.exports ={
       const token = randomUUID();
       await User.insertUser(data.inName, data.inEmail, data.inPassword, token);
       req.session.sessionUser = token;
-      res.render('pages/index');
+      res.render('pug/pages/index');
       return;
 
     }else{
       listError.push({"msg": 'Email já cadastrado, insira um novo'})
-      res.render("pages/cadastro",{erros: listError})
+      res.render("pug/pages/cadastro",{erros: listError})
       return;
     }
   }

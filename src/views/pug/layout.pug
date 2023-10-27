@@ -1,0 +1,20 @@
+doctype html
+html(lang="pt-br")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet" href="/css/bootstrap/bootstrap.css")
+    link(rel="stylesheet" href="/css/project/style.css")
+    link(rel="shortcut icon" href="/img/logoFavIcon.png" type="image/x-icon")
+
+    block title
+  body 
+    .wrapper 
+      .body-content
+        include components/header.pug
+        block body
+        include components/footer.pug
+    script(src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous")
+    script(src="/js/bootstrap.js") 
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js") 

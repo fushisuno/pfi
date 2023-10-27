@@ -36,9 +36,14 @@ server.use(express.static(path.join(__dirname, "./public")));
 server.use(express.urlencoded({extended: true}));
 
 // Configurando template engine
-server.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
+/*server.engine('handlebars', handlebars.engine({defaultLayout: 'main'}));
 server.set('view engine', 'handlebars');
-server.set("views", path.join(__dirname, './src/views'));
+server.set("views", path.join(__dirname, './src/views'));*/
+server.set('views', path.join(__dirname, './src/views'));
+server.set('view engine', 'pug');
+
+
+
 
 
 // Router
